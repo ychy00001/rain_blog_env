@@ -1,0 +1,12 @@
+#var
+var/www
+var/log
+
+# windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+
+# vi swap file
+*.swp
