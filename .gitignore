@@ -1,8 +1,8 @@
 #var
-var/www
+var/www/*
 !var/www/placeholder
 
-var/log/nginx
+var/log/nginx/*
 !var/log/nginx/placeholder
 
 # windows thumbnail cache
