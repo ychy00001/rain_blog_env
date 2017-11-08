@@ -31,7 +31,8 @@ services:
           - .:/application
           - ./etc/nginx/conf.d:/etc/nginx/conf.d
       ports:
-       - "7878:80"
+       - "80:80"
+       - "8081:81"       
 
     php-fpm:
       build: phpdocker/php-fpm
