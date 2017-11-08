@@ -1,12 +1,12 @@
 #var
 var/www/*
-!var/www/placeholder
+!var/www/.placeholder
 
 var/log/nginx/*
-!var/log/nginx/placeholder
+!var/log/nginx/.placeholder
 
 var/backup/*
-!var/backup/placeholder
+!var/backup/.placeholder
 
 # windows thumbnail cache
 Thumbs.db
