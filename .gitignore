@@ -1,6 +1,6 @@
 #var
-var/www
-var/log
+var/www/*
+var/log/*
 
 # windows thumbnail cache
 Thumbs.db
