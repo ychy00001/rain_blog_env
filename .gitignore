@@ -5,6 +5,9 @@ var/www/*
 var/log/nginx/*
 !var/log/nginx/placeholder
 
+var/backup/*
+!var/backup/placeholder
+
 # windows thumbnail cache
 Thumbs.db
 
