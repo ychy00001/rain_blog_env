@@ -33,6 +33,7 @@ services:
       ports:
        - "80:80"
        - "8081:81"       
+       - "8082:82"       
 
     php-fpm:
       build: phpdocker/php-fpm
