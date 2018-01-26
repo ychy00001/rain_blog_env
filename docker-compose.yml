@@ -10,11 +10,15 @@ services:
 
     postgres:
       image: postgres:9.6-alpine
+      ports: 
+        - "5433:5432"
       container_name: rainblog-postgres
       working_dir: /application
       volumes:
         - .:/application
+        - ./var/lib/postgresql/data:/var/lib/postgresql/data
       environment:
+        - PGDATA=/var/lib/postgresql/data
         - POSTGRES_USER=root
         - POSTGRES_PASSWORD=qw88@11
         - POSTGRES_DB=faraway-blog

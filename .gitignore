@@ -8,6 +8,9 @@ var/log/nginx/*
 var/backup/*
 !var/backup/.placeholder
 
+var/lib/postgresql/data
+!var/lib/postgresql/.placeholder
+
 # windows thumbnail cache
 Thumbs.db
 
