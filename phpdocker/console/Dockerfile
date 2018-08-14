@@ -1,5 +1,7 @@
 FROM phpdockerio/php71-fpm:latest
 
+MAINTAINER Rain <ychy00001@163.com>
+
 # 安装 git curl vim zip
 RUN apt-get update && apt-get install -y git curl vim libfreetype6-dev \
   && rm -rf /var/lib/apt/list* 
