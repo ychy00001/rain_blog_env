@@ -1,4 +1,4 @@
-FROM phpdockerio/php71-fpm:latest
+FROM ubuntu:latest
 
 MAINTAINER Rain <ychy00001@163.com>
 
