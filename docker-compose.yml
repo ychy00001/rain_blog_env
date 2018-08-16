@@ -22,6 +22,8 @@ services:
         - POSTGRES_USER=root
         - POSTGRES_PASSWORD=qw88@11
         - POSTGRES_DB=faraway-blog
+      networks:
+        - code-network    
 
     elasticsearch:
       image: elasticsearch:5.4-alpine
@@ -32,12 +34,15 @@ services:
       container_name: rainblog-webserver
       working_dir: /application
       volumes:
-          - .:/application
-          - ./etc/nginx/conf.d:/etc/nginx/conf.d
+         - .:/application
+         - ./etc/nginx/conf.d:/etc/nginx/conf.d
+         - "phpsocket:/var/run"
       ports:
-       - "80:80"
-       - "8081:81"       
-       - "8082:82"       
+         - "80:80"
+         - "8081:81"       
+         - "8082:82"       
+      networks:
+         - code-network
 
     php-fpm:
       build: phpdocker/php-fpm
@@ -46,10 +51,21 @@ services:
       volumes:
         - .:/application
         - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
-       
+        - ./phpdocker/php-fpm/www.conf:/etc/php/7.1/fpm/pool.d/z-overrides.conf
+        - "phpsocket:/var/run"
+      networks:
+        - code-network
+
     node:
       build: phpdocker/node
       container_name: rainblog-node
       volumes:
         - .:/application
       tty: true
+
+networks:
+  code-network:
+    driver: bridge
+
+volumes:
+  phpsocket:
