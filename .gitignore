@@ -5,6 +5,9 @@ var/www/*
 var/log/nginx/*
 !var/log/nginx/.placeholder
 
+var/log/php/*
+!var/log/php/.placeholder
+
 var/backup/*
 !var/backup/.placeholder
 
